@@ -48,14 +48,29 @@
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mute); transition: color 0.2s; }
     .nav-links a:hover { color: var(--cream); }
-    .nav-cta { padding: 10px 24px; background: var(--lavender); color: var(--midnight); border-radius: 100px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; transition: background 0.2s, transform 0.15s; }
-    .nav-cta:hover { background: var(--sand-lt); transform: translateY(-1px); }
+    .nav-cta {
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #F6D6FF 0%, #D9D4FF 48%, #C9E7FF 100%);
+      color: #17141F;
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 8px 22px rgba(170, 150, 230, 0.24), inset 0 1px 0 rgba(255,255,255,0.72);
+    }
+    .nav-cta:hover {
+      background: linear-gradient(135deg, #F9E3FF 0%, #E4DEFF 48%, #D8F1FF 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(170, 150, 230, 0.28), inset 0 1px 0 rgba(255,255,255,0.84);
+    }
 
     /* ─── HERO ────────────────────────────────────────── */
     .hero {
-      position: relative; min-height: 100vh;
+      position: relative; min-height: 72vh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 120px 24px 40px; overflow: hidden;
+      text-align: center; padding: 124px 24px 28px; overflow: hidden;
     }
     .hero::after {
       content: ''; position: absolute; inset: 0;
@@ -74,25 +89,57 @@
     .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
     .hero h1 {
-      font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.8rem, 7vw, 6rem);
-      font-weight: 700; line-height: 1.05; letter-spacing: -0.03em; color: var(--cream);
-      position: relative; z-index: 1; margin-bottom: 24px;
+      font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.4rem, 5.4vw, 4.6rem);
+      font-weight: 700; line-height: 1.08; letter-spacing: -0.035em; color: #17141F;
+      position: relative; z-index: 1; margin-bottom: 20px; max-width: 12ch;
     }
     .hero p.hero-body {
-      font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--text-mute); max-width: 600px;
-      margin: 0 auto 40px; position: relative; z-index: 1; line-height: 1.75;
+      font-size: clamp(0.98rem, 1.45vw, 1.08rem); color: #5F5870; max-width: 640px;
+      margin: 0 auto 32px; position: relative; z-index: 1; line-height: 1.72;
     }
     .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
-    .btn-primary { padding: 16px 36px; background: var(--lavender); color: var(--midnight); border-radius: 100px; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.04em; transition: all 0.2s; box-shadow: 0 8px 32px rgba(184,176,216,0.3); }
-    .btn-primary:hover { background: var(--cream); transform: translateY(-2px); }
-    .btn-secondary { padding: 16px 36px; background: transparent; color: var(--cream); border: 1px solid rgba(245,240,235,0.25); border-radius: 100px; font-weight: 500; font-size: 0.95rem; letter-spacing: 0.04em; transition: all 0.2s; }
-    .btn-secondary:hover { border-color: var(--lavender); color: var(--lavender); transform: translateY(-2px); }
-    .scroll-hint {
-      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: var(--text-mute); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; z-index: 1;
+    .btn-primary {
+      padding: 16px 36px;
+      background: linear-gradient(135deg, #F6D6FF 0%, #D9D4FF 46%, #C9E7FF 100%);
+      color: #17141F;
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
+      box-shadow: 0 10px 30px rgba(170, 150, 230, 0.28), inset 0 1px 0 rgba(255,255,255,0.75);
     }
-    .scroll-hint::after { content: ''; width: 1px; height: 40px; background: linear-gradient(to bottom, var(--lavender), transparent); animation: scrollLine 2s infinite; }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #F9E3FF 0%, #E4DEFF 46%, #D8F1FF 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px rgba(170, 150, 230, 0.34), inset 0 1px 0 rgba(255,255,255,0.85);
+    }
+    .btn-secondary {
+      padding: 16px 36px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(247,243,253,0.96) 52%, rgba(238,248,255,0.98) 100%);
+      color: #17141F;
+      border: 1px solid rgba(198, 182, 240, 0.5);
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
+      box-shadow: 0 8px 24px rgba(126, 110, 178, 0.10), inset 0 1px 0 rgba(255,255,255,0.88);
+    }
+    .btn-secondary:hover {
+      border-color: rgba(159,122,234,0.42);
+      color: #17141F;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FBF7FF 52%, #F2FBFF 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(126, 110, 178, 0.14), inset 0 1px 0 rgba(255,255,255,0.92);
+    }
+    .scroll-hint {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(95,88,112,0.7); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; z-index: 1;
+    }
+    .scroll-hint::after { content: ''; width: 1px; height: 32px; background: linear-gradient(to bottom, rgba(159,122,234,0.75), transparent); animation: scrollLine 2s infinite; }
     @keyframes scrollLine { 0% { opacity: 0; transform: scaleY(0); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } 100% { opacity: 0; transform: scaleY(1); transform-origin: bottom; } }
 
     /* ─── BASE ────────────────────────────────────────── */
@@ -116,6 +163,8 @@
 
     /* ─── TIERS ───────────────────────────────────────── */
     .tiers { padding: 120px 0 80px; }
+    .tiers .section-title { color: #231A31; }
+    .tiers .section-body { color: #5F5870; }
     .tiers-header { text-align: center; margin-bottom: 64px; }
     .tiers-header .section-body { margin: 0 auto; text-align: center; }
 
@@ -158,21 +207,45 @@
     .badge-sage { background: rgba(122,158,159,0.2); color: var(--sage-lt); border: 1px solid rgba(122,158,159,0.3); }
     .badge-lavender { background: rgba(184,176,216,0.2); color: var(--lavender); border: 1px solid rgba(184,176,216,0.3); }
     .badge-sand { background: rgba(201,169,110,0.2); color: var(--sand-lt); border: 1px solid rgba(201,169,110,0.3); }
-    .tier-size { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--cream); line-height: 1.1; margin-bottom: 8px; }
-    .tier-who { font-size: 0.85rem; color: var(--text-mute); font-style: italic; }
-    .tier-body { padding: 28px 32px 36px; background: rgba(245,240,235,0.02); }
+    .tier-size { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: #231A31; line-height: 1.1; margin-bottom: 8px; }
+    .tier-who { font-size: 0.85rem; color: #6B647A; font-style: italic; }
+    .tier-body { padding: 28px 32px 36px; background: rgba(255,255,255,0.82); }
     .tier-services { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
-    .tier-services li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: var(--text-mute); line-height: 1.5; }
+    .tier-services li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: #4E465E; line-height: 1.6; }
     .tier-services li::before { content: '✦'; color: var(--lavender); font-size: 0.65rem; margin-top: 4px; flex-shrink: 0; }
     .tier-card:nth-child(1) .tier-services li::before { color: var(--sage); }
     .tier-card:nth-child(3) .tier-services li::before { color: var(--sand); }
     .tier-cta { display: block; text-align: center; padding: 14px 24px; border-radius: 100px; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.04em; transition: all 0.2s; }
-    .cta-sage { background: rgba(122,158,159,0.15); color: var(--sage-lt); border: 1px solid rgba(122,158,159,0.3); }
-    .cta-sage:hover { background: var(--sage); color: var(--midnight); }
-    .cta-lavender { background: var(--lavender); color: var(--midnight); border: 1px solid transparent; box-shadow: 0 6px 24px rgba(184,176,216,0.3); }
-    .cta-lavender:hover { background: var(--cream); transform: translateY(-1px); }
-    .cta-sand { background: rgba(201,169,110,0.15); color: var(--sand-lt); border: 1px solid rgba(201,169,110,0.3); }
-    .cta-sand:hover { background: var(--sand); color: var(--midnight); }
+    .cta-sage {
+      background: linear-gradient(135deg, #AEEAE3 0%, #9DD8D3 45%, #8AC7D6 100%);
+      color: #17313A;
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: 0 12px 28px rgba(122, 187, 196, 0.22), inset 0 1px 0 rgba(255,255,255,0.75);
+    }
+    .cta-sage:hover {
+      background: linear-gradient(135deg, #B9F1EA 0%, #ABE3DD 45%, #9AD8E4 100%);
+      color: #17313A;
+    }
+    .cta-lavender {
+      background: linear-gradient(135deg, #F0B7FF 0%, #C8B4FF 48%, #9FD7FF 100%);
+      color: #17141F;
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: 0 14px 30px rgba(168, 134, 245, 0.28), inset 0 1px 0 rgba(255,255,255,0.72);
+    }
+    .cta-lavender:hover {
+      background: linear-gradient(135deg, #F5C6FF 0%, #D5C4FF 48%, #B6E2FF 100%);
+      transform: translateY(-1px);
+    }
+    .cta-sand {
+      background: linear-gradient(135deg, #FFE7B8 0%, #F5D79A 45%, #E9C37E 100%);
+      color: #5A4320;
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: 0 12px 28px rgba(223, 184, 105, 0.22), inset 0 1px 0 rgba(255,255,255,0.76);
+    }
+    .cta-sand:hover {
+      background: linear-gradient(135deg, #FFEDC7 0%, #F9DEAA 45%, #EDCC8E 100%);
+      color: #5A4320;
+    }
 
     /* Carousel nav */
     .carousel-nav {
@@ -207,8 +280,8 @@
       border: 1px solid rgba(184,176,216,0.08);
       border-radius: var(--radius-lg);
     }
-    .proof-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--text-mute); letter-spacing: 0.04em; }
-    .proof-item span { color: var(--lavender); font-size: 1.1rem; }
+    .proof-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: #111111; letter-spacing: 0.04em; font-weight: 700; }
+    .proof-item span { color: #111111; font-size: 1.1rem; }
 
     /* ─── SERVICES DETAIL ─────────────────────────────── */
     .services-detail { padding: 120px 0; background: var(--midnight2); }
@@ -263,7 +336,7 @@
       .proof-inner { gap: 24px; }
     }
     /* Mobile: switch to carousel */
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .carousel-wrapper {
         padding: 0 8%;
         overflow: hidden;
@@ -283,6 +356,22 @@
       }
       .tier-card.active { opacity: 1; }
       .carousel-nav { display: flex; }
+      .booking-card-mobile {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 22px !important;
+      }
+      .booking-copy-mobile {
+        order: 1;
+      }
+      .booking-calendar-mobile {
+        order: 2;
+        min-height: 0 !important;
+      }
+      .booking-calendar-mobile .calendly-inline-widget {
+        min-width: 100% !important;
+        height: 660px !important;
+      }
     }
     @media (max-width: 600px) {
       .how-steps { grid-template-columns: 1fr; }
@@ -295,42 +384,113 @@
   <nav>
     <div class="nav-logo">SLO<span>·</span>TECH</div>
     <ul class="nav-links">
-      <li><a href="#how">Services</a></li>
-      <li><a href="#tiers">Who We Serve</a></li>
       <li><a href="#book">Book</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <li><a href="#services-detail">Automation</a></li>
+      <li><a href="#training">AI Training</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#tiers">Who We Serve</a></li>
     </ul>
     <a href="#book" class="nav-cta">Book a Free Call</a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-tag">AI Automation · SLO County, CA</div>
-    <h1>Book a free call to learn how we can automate your business.</h1>
-    <p class="hero-body">Get a practical discovery call focused on your actual operations. We'll look at where time gets eaten, what can be automated first, and what would make the biggest difference for your team.</p>
-    <div class="hero-btns">
-      <a href="#book" class="btn-primary">Book a Free Call</a>
-      <a href="#tiers" class="btn-secondary">See What We Do</a>
-    </div>
-    <div class="scroll-hint">Scroll</div>
-  </section>
-
-  <section id="book" style="position:relative;z-index:1;padding:24px 0 84px;">
+  <section id="book" style="position:relative;z-index:1;padding:96px 0 84px;">
     <div class="container">
-      <div style="background:radial-gradient(circle at top left, rgba(246,214,255,0.42), transparent 28%), radial-gradient(circle at top right, rgba(191,231,255,0.34), transparent 24%), rgba(255,255,255,0.92); border:1px solid rgba(159,122,234,0.14); border-radius:32px; box-shadow:0 18px 50px rgba(38,24,66,0.10); padding:28px; overflow:hidden;">
-        <div style="text-align:center;max-width:760px;margin:0 auto 24px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:#9F7AEA;margin-bottom:14px;">Discovery Call</div>
-          <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2rem,4vw,3.4rem);line-height:1.06;letter-spacing:-0.04em;color:#17141F;margin-bottom:14px;font-weight:800;">A simple first step for businesses that want less busywork and better systems.</h2>
-          <p style="font-size:1.05rem;line-height:1.75;color:#5F5870;max-width:60ch;margin:0 auto;">Choose a time that works for you. The booking flow is built right into the page so it feels like part of the experience, not a handoff to some random external form.</p>
-        </div>
-        <div style="border-radius:24px;overflow:hidden;border:1px solid rgba(159,122,234,0.12);background:rgba(255,255,255,0.8);min-height:700px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.65);">
-          <div class="calendly-inline-widget" data-url="https://calendly.com/unicole-unicron/slo-tech-discovery-call" style="min-width:320px;height:700px;"></div>
+      <div style="display:flex;justify-content:flex-start;gap:14px;flex-wrap:wrap;margin:0 0 22px;">
+        <a href="#book" style="display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;background:linear-gradient(135deg, #F6D6FF 0%, #D9D4FF 46%, #C9E7FF 100%);color:#17141F;border:1px solid rgba(255,255,255,0.72);border-radius:999px;font-weight:700;font-size:0.95rem;letter-spacing:0.02em;box-shadow:0 10px 30px rgba(170,150,230,0.28), inset 0 1px 0 rgba(255,255,255,0.75);">Book a Free Call</a>
+        <a href="#services-detail" style="display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;background:linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(247,243,253,0.96) 52%, rgba(238,248,255,0.98) 100%);color:#17141F;border:1px solid rgba(198,182,240,0.5);border-radius:999px;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;box-shadow:0 8px 24px rgba(126,110,178,0.10), inset 0 1px 0 rgba(255,255,255,0.88);">Learn About Automation</a>
+        <a href="#training" style="display:inline-flex;align-items:center;justify-content:center;padding:16px 30px;background:linear-gradient(135deg, rgba(255,255,255,0.96) 0%, rgba(247,243,253,0.96) 52%, rgba(238,248,255,0.98) 100%);color:#17141F;border:1px solid rgba(198,182,240,0.5);border-radius:999px;font-weight:600;font-size:0.95rem;letter-spacing:0.02em;box-shadow:0 8px 24px rgba(126,110,178,0.10), inset 0 1px 0 rgba(255,255,255,0.88);">AI Training</a>
+      </div>
+      <div style="background:radial-gradient(circle at top left, rgba(246,214,255,0.42), transparent 28%), radial-gradient(circle at top right, rgba(191,231,255,0.34), transparent 24%), rgba(255,255,255,0.92); border:1px solid rgba(159,122,234,0.14); border-radius:32px; box-shadow:0 18px 50px rgba(38,24,66,0.10); padding:32px; overflow:hidden;">
+        <div class="booking-card-mobile" style="display:grid;grid-template-columns:minmax(0, 0.9fr) minmax(0, 1.35fr);gap:28px;align-items:start;">
+          <div class="booking-copy-mobile">
+            <h2 style="font-family:'Manrope',sans-serif;font-size:clamp(2rem,3.8vw,3.6rem);line-height:1.04;letter-spacing:-0.04em;color:#17141F;margin:0 0 16px;font-weight:800;max-width:10ch;">Book a free call to learn how you can use AI to automate your business</h2>
+            <p style="font-size:1.05rem;line-height:1.72;color:#5F5870;max-width:36ch;margin:0;">Let's talk about how we can help you save time and effort by building AI automation.</p>
+          </div>
+          <div class="booking-calendar-mobile" style="border-radius:24px;overflow:hidden;border:1px solid rgba(159,122,234,0.12);background:rgba(255,255,255,0.8);min-height:700px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.65);">
+            <div class="calendly-inline-widget" data-url="https://calendly.com/unicole-unicron/slo-tech-discovery-call?hide_event_type_details=1" style="min-width:320px;height:700px;"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
+  <section class="services-detail" id="services-detail">
+    <div class="container">
+      <div class="services-two-col">
+        <div>
+          <div class="services-detail-header">
+            <p class="section-label">What We Automate</p>
+            <h2 class="section-title">If it's on a computer or a phone,<br /><em>it can be automated.</em></h2>
+            <p class="section-body">Here's a sample of what we handle for SLO County businesses every day.</p>
+          </div>
+          <div class="services-pills">
+            <div class="pill">📞 AI Receptionist</div>
+            <div class="pill">📅 Scheduling &amp; Booking</div>
+            <div class="pill">📧 Email Campaigns</div>
+            <div class="pill">💬 SMS Reminders</div>
+            <div class="pill">🌐 Website Management</div>
+            <div class="pill">📣 Ads &amp; Promotions</div>
+            <div class="pill">👥 CRM &amp; Client Tracking</div>
+            <div class="pill">⭐ Review Management</div>
+            <div class="pill">🤖 Custom AI Agents</div>
+            <div class="pill">📊 Reporting &amp; Analytics</div>
+            <div class="pill">🔗 System Integrations</div>
+            <div class="pill">🎯 Lead Follow-Up</div>
+          </div>
+        </div>
+        <div>
+          <div class="highlight-box">
+            <h4>Powered by Claude, OpenAI, and OpenClaw</h4>
+            <p>We build on cutting-edge AI infrastructure including Claude, OpenAI, and OpenClaw — the same platforms used by forward-thinking businesses worldwide, customized for your exact needs.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Local</h4>
+            <p>We're based right here in SLO County. We know the community, the businesses, and what actually works here.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>No lock-in. No black boxes.</h4>
+            <p>Everything we build, you own. The systems, the access, and the knowledge to run them yourself. Some clients let us handle everything, and others want to learn enough to take the wheel themselves. We’re good with either.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="training" id="training" style="position:relative;padding:108px 0 96px;">
+    <div class="container">
+      <div style="max-width:860px;margin:0 auto 44px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+        <p class="section-label" style="color:#746A86;text-align:center;">AI Training</p>
+        <h2 class="section-title" style="color:#1F172C;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;">AI training for your team</h2>
+        <p class="section-body" style="color:#4E465E;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;">You've invested in AI, but if your employees aren't sure how to use it, or which tools are even worth their time, that investment isn't doing much yet. And honestly, that's really common right now. Most people just haven't had anyone sit down with them to help it make sense to their workflow.</p>
+        <p class="section-body" style="margin-top:16px;color:#4E465E;text-align:center;max-width:760px;margin-left:auto;margin-right:auto;">That's what we do. SLO Tech offers training programs for teams of every size and skill level, from the C-suite to the front desk. We keep it practical, approachable, and specific to the work your people are actually doing.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;">
+        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(249,244,255,0.96) 100%);border:1px solid rgba(180,164,224,0.18);border-radius:28px;padding:28px;box-shadow:0 16px 40px rgba(90,74,130,0.08);">
+          <h3 style="font-size:1.15rem;color:#231A31;margin:0 0 12px;font-weight:700;">Lunch and Learns</h3>
+          <p style="margin:0;color:#5F5870;line-height:1.75;">A relaxed, one-hour session that gets your team curious and hands-on without eating up the workday. No homework, no jargon, just a good starting point.</p>
+        </div>
+        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(243,249,255,0.96) 100%);border:1px solid rgba(180,164,224,0.18);border-radius:28px;padding:28px;box-shadow:0 16px 40px rgba(90,74,130,0.08);">
+          <h3 style="font-size:1.15rem;color:#231A31;margin:0 0 12px;font-weight:700;">Role-Based Workshop</h3>
+          <p style="margin:0;color:#5F5870;line-height:1.75;">A phone agent and a department head need completely different things from AI. We build each session around the real tasks your people do every day, so what they learn actually sticks.</p>
+        </div>
+        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(249,244,255,0.96) 100%);border:1px solid rgba(180,164,224,0.18);border-radius:28px;padding:28px;box-shadow:0 16px 40px rgba(90,74,130,0.08);">
+          <h3 style="font-size:1.15rem;color:#231A31;margin:0 0 12px;font-weight:700;">Executive Briefings</h3>
+          <p style="margin:0;color:#5F5870;line-height:1.75;">For leadership teams who want to understand what they've invested in, how to drive adoption, and how to measure whether it's working.</p>
+        </div>
+        <div style="background:linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(243,249,255,0.96) 100%);border:1px solid rgba(180,164,224,0.18);border-radius:28px;padding:28px;box-shadow:0 16px 40px rgba(90,74,130,0.08);">
+          <h3 style="font-size:1.15rem;color:#231A31;margin:0 0 12px;font-weight:700;">Ongoing Coaching</h3>
+          <p style="margin:0;color:#5F5870;line-height:1.75;">AI moves fast and a one-time training only goes so far. We offer monthly check-ins and refreshers to keep your team growing with it.</p>
+        </div>
+      </div>
+      <div style="max-width:780px;margin:24px auto 0;text-align:center;">
+        <p style="margin:0;color:#4F475F;font-size:1rem;line-height:1.75;font-weight:500;">No tech background needed. We work with people at every comfort level, including the skeptics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES DETAIL -->
   <section class="how" id="how">
     <div class="container">
       <div class="how-header">
@@ -464,58 +624,14 @@
     </div>
   </section>
 
-  <!-- SERVICES DETAIL -->
-  <section class="services-detail">
-    <div class="container">
-      <div class="services-two-col">
-        <div>
-          <div class="services-detail-header">
-            <p class="section-label">What We Automate</p>
-            <h2 class="section-title">If it's on a computer or a phone,<br /><em>it can be automated.</em></h2>
-            <p class="section-body">Here's a sample of what we handle for SLO County businesses every day.</p>
-          </div>
-          <div class="services-pills">
-            <div class="pill">📞 AI Receptionist</div>
-            <div class="pill">📅 Scheduling &amp; Booking</div>
-            <div class="pill">📧 Email Campaigns</div>
-            <div class="pill">💬 SMS Reminders</div>
-            <div class="pill">🌐 Website Management</div>
-            <div class="pill">📣 Ads &amp; Promotions</div>
-            <div class="pill">👥 CRM &amp; Client Tracking</div>
-            <div class="pill">⭐ Review Management</div>
-            <div class="pill">🤖 Custom AI Agents</div>
-            <div class="pill">📊 Reporting &amp; Analytics</div>
-            <div class="pill">🔗 System Integrations</div>
-            <div class="pill">🎯 Lead Follow-Up</div>
-          </div>
-        </div>
-        <div>
-          <div class="highlight-box">
-            <h4>Powered by Claude, OpenAI, and OpenClaw</h4>
-            <p>We build on cutting-edge AI infrastructure including Claude, OpenAI, and OpenClaw — the same platforms used by forward-thinking businesses worldwide, customized for your exact needs.</p>
-          </div>
-          <div class="highlight-box">
-            <h4>Local</h4>
-            <p>We're based right here in SLO County. We know the community, the businesses, and what actually works here.</p>
-          </div>
-          <div class="highlight-box">
-            <h4>No lock-in</h4>
-            <p>Everything we build, you own. You get the systems, the access, and the knowledge to run them.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
+  <!-- TRAINING -->
   <section class="cta-section" id="contact">
     <div class="container">
       <span class="section-label">Ready When You Are</span>
       <h2 class="section-title">Want to talk through your business before you decide?</h2>
-      <p class="section-body">You can book your discovery call above, or open Calendly directly if that's easier.</p>
+      <p class="section-body">Whether you want automation built for you, team training, lunch-and-learns, or ongoing coaching, we can help you find the right starting point.</p>
       <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1;">
-        <a href="#book" class="btn-primary">Open the Scheduler</a>
-        <a href="https://calendly.com/unicole-unicron/slo-tech-discovery-call" class="btn-secondary" target="_blank" rel="noopener">Open Calendly Directly</a>
+        <a href="#book" class="btn-primary">Book a free call</a>
       </div>
     </div>
   </section>
@@ -529,9 +645,11 @@
           <div class="footer-tagline">AI Automation for SLO County</div>
         </div>
         <ul class="footer-links">
-          <li><a href="#how">Services</a></li>
+          <li><a href="#book">Book</a></li>
+          <li><a href="#services-detail">Automation</a></li>
+          <li><a href="#training">AI Training</a></li>
+          <li><a href="#how">How It Works</a></li>
           <li><a href="#tiers">Who We Serve</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="footer-copy">© 2026 Celestial Consulting LLC · SLO Tech</div>
       </div>
